@@ -43,6 +43,13 @@ Partial Class frmStart
         Me.btnNasta = New System.Windows.Forms.Button()
         Me.btnForsta = New System.Windows.Forms.Button()
         Me.lvwFakturarader = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
+        Me.CI1 = New System.Windows.Forms.ColumnHeader()
+        Me.CI2 = New System.Windows.Forms.ColumnHeader()
+        Me.CI4 = New System.Windows.Forms.ColumnHeader()
+        Me.CI3 = New System.Windows.Forms.ColumnHeader()
+        Me.CI5 = New System.Windows.Forms.ColumnHeader()
+        Me.CI6 = New System.Windows.Forms.ColumnHeader()
         Me.btnRadera = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -221,12 +228,56 @@ Partial Class frmStart
         '
         'lvwFakturarader
         '
+        Me.lvwFakturarader.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvwFakturarader.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.CI1, Me.CI2, Me.CI4, Me.CI3, Me.CI5, Me.CI6})
+        Me.lvwFakturarader.FullRowSelect = True
+        Me.lvwFakturarader.GridLines = True
+        Me.lvwFakturarader.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lvwFakturarader.HideSelection = False
         Me.lvwFakturarader.Location = New System.Drawing.Point(12, 234)
+        Me.lvwFakturarader.MultiSelect = False
         Me.lvwFakturarader.Name = "lvwFakturarader"
         Me.lvwFakturarader.Size = New System.Drawing.Size(776, 391)
         Me.lvwFakturarader.TabIndex = 17
         Me.lvwFakturarader.UseCompatibleStateImageBehavior = False
+        Me.lvwFakturarader.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "ID"
+        Me.ColumnHeader1.Width = 30
+        '
+        'CI1
+        '
+        Me.CI1.Text = "Förnamn"
+        Me.CI1.Width = 123
+        '
+        'CI2
+        '
+        Me.CI2.Text = "Efternamn"
+        Me.CI2.Width = 123
+        '
+        'CI4
+        '
+        Me.CI4.Text = "Adress"
+        Me.CI4.Width = 123
+        '
+        'CI3
+        '
+        Me.CI3.Text = "Ort"
+        Me.CI3.Width = 123
+        '
+        'CI5
+        '
+        Me.CI5.Text = "PostNr"
+        Me.CI5.Width = 123
+        '
+        'CI6
+        '
+        Me.CI6.Text = "Datum"
+        Me.CI6.Width = 123
         '
         'btnRadera
         '
@@ -291,4 +342,11 @@ Partial Class frmStart
     Friend WithEvents btnForsta As Button
     Friend WithEvents lvwFakturarader As ListView
     Friend WithEvents btnRadera As Button
+    Friend WithEvents CI1 As ColumnHeader
+    Friend WithEvents CI2 As ColumnHeader
+    Friend WithEvents CI4 As ColumnHeader
+    Friend WithEvents CI3 As ColumnHeader
+    Friend WithEvents CI5 As ColumnHeader
+    Friend WithEvents CI6 As ColumnHeader
+    Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class

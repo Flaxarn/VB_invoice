@@ -47,6 +47,7 @@
         txtPost.MaxLength = Math.Ceiling(Math.Log10(recordCount)) ' Ändra längd på inmatning av textruta efter hur många poster som finns
         postNr = 0
         fyllFormular(postNr)
+        laddaLista()
     End Sub
 
     Public Sub fyllFormular(postNr As Integer)
@@ -210,5 +211,30 @@
         fyllFormular(postNr)
 
         MsgBox("Borta!")
+    End Sub
+
+    Private Sub laddaLista()
+        Dim itm As ListViewItem
+
+        da.Fill(ds, SchemaType.Mapped)
+
+        For i = 0 To ds.Tables("Fakturor").Rows.Count - 1
+            itm = lvwFakturarader.Items.Add(ds.Tables("Fakturor").Rows(i)("id"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Fornamn"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Efternamn"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Adress"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Postnr"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Ort"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Datum"))
+        Next
+    End Sub
+
+    Private Sub lvwFakturarader_DoubleClick(sender As Object, e As EventArgs) Handles lvwFakturarader.DoubleClick
+
+        Dim rad As Integer = lvwFakturarader.SelectedIndices(0)
+
+        fyllFormular(rad)
+
+
     End Sub
 End Class
