@@ -219,7 +219,7 @@
         da.Fill(ds, SchemaType.Mapped)
 
         For i = 0 To ds.Tables("Fakturor").Rows.Count - 1
-            itm = lvwFakturarader.Items.Add(ds.Tables("Fakturor").Rows(i)("id"))
+            itm = lvwFakturor.Items.Add(ds.Tables("Fakturor").Rows(i)("id"))
             itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Fornamn"))
             itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Efternamn"))
             itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Adress"))
@@ -229,9 +229,9 @@
         Next
     End Sub
 
-    Private Sub lvwFakturarader_DoubleClick(sender As Object, e As EventArgs) Handles lvwFakturarader.DoubleClick
+    Private Sub lvwFakturarader_DoubleClick(sender As Object, e As EventArgs) Handles lvwFakturor.DoubleClick
 
-        Dim rad As Integer = lvwFakturarader.SelectedIndices(0)
+        Dim rad As Integer = lvwFakturor.SelectedIndices(0)
 
         fyllFormular(rad)
 
