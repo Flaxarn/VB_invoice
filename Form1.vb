@@ -229,12 +229,12 @@
         Next
     End Sub
 
+
     Private Sub lvwFakturarader_DoubleClick(sender As Object, e As EventArgs) Handles lvwFakturor.DoubleClick
 
         Dim rad As Integer = lvwFakturor.SelectedIndices(0)
 
         fyllFormular(rad)
-
 
     End Sub
 End Class
