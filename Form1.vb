@@ -205,4 +205,26 @@
         frmLista.Show()
         Me.Hide()
     End Sub
+
+    Private Sub lvwFakturor_DoubleClick(sender As Object, e As EventArgs) Handles lvwFakturor.DoubleClick
+        andraPost()
+        visaFakturarader()
+    End Sub
+
+    Private Sub lvwFakturor_Click(sender As Object, e As EventArgs) Handles lvwFakturor.Click
+        andraPost()
+    End Sub
+
+    Private Sub andraPost()
+        Dim rad As Integer = lvwFakturor.SelectedIndices(0)
+
+        postNr = rad
+        fyllFormular(postNr)
+    End Sub
+
+    Private Sub visaFakturarader()
+        fakturaID = ds.Tables("Fakturor").Rows(postNr)("Id")
+        frmLista.Show()
+        Me.Hide()
+    End Sub
 End Class
