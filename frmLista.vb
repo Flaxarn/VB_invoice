@@ -1,14 +1,16 @@
 ﻿Public Class frmLista
     Dim recordCount As Integer
     Dim postNr As Integer
+
     Private Sub frmLista_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         frmStart.Show()
+        ds.Tables.Remove("Fakturarader")
     End Sub
 
     Private Sub frmLista_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim itm As ListViewItem
         Dim sql As String
-
+        Dim daLocal As OleDb.OleDbDataAdapter            ' Uppdatera tabeller
 
 
         ' ny sql för fakturarader
@@ -16,10 +18,10 @@
         'sql = "SELECT id, beskrivning, summa from fakturaRader;"
 
         ' Koppla och fyll dataadaptern
-        da = New OleDb.OleDbDataAdapter(sql, con)
-        da.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        da.Fill(ds, "Fakturarader")
-        da.Fill(ds, SchemaType.Mapped)
+        daLocal = New OleDb.OleDbDataAdapter(sql, con)
+        daLocal.MissingSchemaAction = MissingSchemaAction.AddWithKey
+        daLocal.Fill(ds, "Fakturarader")
+        daLocal.Fill(ds, SchemaType.Mapped)
 
 
         'räkna antalet poster

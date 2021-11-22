@@ -57,7 +57,9 @@
 
         ' Hantera knappar
         hanteraKnappar(postNr)
-        fakturaID = ds.Tables("Fakturor").Rows(postNr)("Id")
+
+
+        'fakturaID = ds.Tables("Fakturor").Rows(postNr)("Id")
     End Sub
 
     Private Sub hanteraKnappar(postNr As Integer)
@@ -199,6 +201,7 @@
     End Sub
 
     Private Sub btnVisarader_Click(sender As Object, e As EventArgs) Handles btnVisarader.Click
+        fakturaID = ds.Tables("Fakturor").Rows(postNr)("Id")
         frmLista.Show()
         Me.Hide()
     End Sub
