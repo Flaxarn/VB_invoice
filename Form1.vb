@@ -12,8 +12,25 @@
         txtPost.MaxLength = Math.Ceiling(Math.Log10(recordCount)) ' Ändra längd på inmatning av textruta efter hur många poster som finns
         postNr = 0
         fyllFormular(postNr)
+        fyllLista()
     End Sub
 
+    Public Sub fyllLista()
+        Dim itm As ListViewItem
+
+        lvwFakturor.Items.Clear()
+        da.Fill(ds, SchemaType.Mapped)
+
+        For i = 0 To ds.Tables("Fakturor").Rows.Count - 1
+            itm = lvwFakturor.Items.Add(ds.Tables("Fakturor").Rows(i)("id"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Fornamn"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Efternamn"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Adress"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Postnr"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Ort"))
+            itm.SubItems.Add(ds.Tables("Fakturor").Rows(i)("Datum"))
+        Next
+    End Sub
     Public Sub fyllFormular(postNr As Integer)
 
         ' Hantera felaktiga postinmatningar
@@ -132,6 +149,7 @@
 
         ' Visa posten
         fyllFormular(postNr)
+        fyllLista()
     End Sub
 
     Private Sub btnNy_Click(sender As Object, e As EventArgs) Handles btnNy.Click
@@ -173,6 +191,7 @@
 
         ' Visa följande post
         fyllFormular(postNr)
+        fyllLista()
 
         MsgBox("Borta!")
     End Sub
