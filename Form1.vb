@@ -2,6 +2,7 @@
     ' Globala variabler
     Dim recordCount As Integer
     Dim postNr As Integer
+
     Private Sub frmStart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Koppla databas 
@@ -41,7 +42,7 @@
         End If
 
         ' Sätt globala variablen
-        Me.postNr = postNr
+        Me.postNr = postNr ' me.posNr
 
         ' Fyll formulär
         txtFornamn.Text = ds.Tables("Fakturor").Rows(postNr)("Fornamn")
@@ -56,6 +57,7 @@
 
         ' Hantera knappar
         hanteraKnappar(postNr)
+        fakturaID = ds.Tables("Fakturor").Rows(postNr)("Id")
     End Sub
 
     Private Sub hanteraKnappar(postNr As Integer)

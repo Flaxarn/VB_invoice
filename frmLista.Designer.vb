@@ -30,6 +30,9 @@ Partial Class frmLista
         Me.btnNyRad = New System.Windows.Forms.Button()
         Me.txtSumma = New System.Windows.Forms.TextBox()
         Me.txtBeskrivning = New System.Windows.Forms.TextBox()
+        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
         Me.SuspendLayout()
         '
         'lvwFakturaRader
@@ -37,6 +40,7 @@ Partial Class frmLista
         Me.lvwFakturaRader.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvwFakturaRader.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.lvwFakturaRader.FullRowSelect = True
         Me.lvwFakturaRader.GridLines = True
         Me.lvwFakturaRader.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
@@ -108,6 +112,20 @@ Partial Class frmLista
         Me.txtBeskrivning.Size = New System.Drawing.Size(459, 31)
         Me.txtBeskrivning.TabIndex = 27
         '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "ID"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Beskrivning"
+        Me.ColumnHeader2.Width = 680
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Summa"
+        Me.ColumnHeader3.Width = 200
+        '
         'frmLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
@@ -139,4 +157,7 @@ Partial Class frmLista
     Friend WithEvents btnNyRad As Button
     Friend WithEvents txtSumma As TextBox
     Friend WithEvents txtBeskrivning As TextBox
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
 End Class

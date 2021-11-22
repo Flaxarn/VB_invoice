@@ -1,4 +1,6 @@
 ﻿Module modData
+    Public fakturaID As Integer
+
     ' Kontakt för databaskopplingar
     Public con As New OleDb.OleDbConnection            ' Connection
     Public ds As New DataSet                           ' Tabeller
