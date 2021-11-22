@@ -23,6 +23,9 @@ Partial Class frmLista
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lvwFakturaRader = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
+        Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnRaderaRad = New System.Windows.Forms.Button()
@@ -30,9 +33,8 @@ Partial Class frmLista
         Me.btnNyRad = New System.Windows.Forms.Button()
         Me.txtSumma = New System.Windows.Forms.TextBox()
         Me.txtBeskrivning = New System.Windows.Forms.TextBox()
-        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader()
-        Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblID = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lvwFakturaRader
@@ -52,6 +54,20 @@ Partial Class frmLista
         Me.lvwFakturaRader.TabIndex = 20
         Me.lvwFakturaRader.UseCompatibleStateImageBehavior = False
         Me.lvwFakturaRader.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "ID"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Beskrivning"
+        Me.ColumnHeader2.Width = 680
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Summa"
+        Me.ColumnHeader3.Width = 200
         '
         'Label8
         '
@@ -112,25 +128,31 @@ Partial Class frmLista
         Me.txtBeskrivning.Size = New System.Drawing.Size(459, 31)
         Me.txtBeskrivning.TabIndex = 27
         '
-        'ColumnHeader1
+        'Label1
         '
-        Me.ColumnHeader1.Text = "ID"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(613, 49)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 25)
+        Me.Label1.TabIndex = 34
+        Me.Label1.Text = "ID :"
         '
-        'ColumnHeader2
+        'lblID
         '
-        Me.ColumnHeader2.Text = "Beskrivning"
-        Me.ColumnHeader2.Width = 680
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Summa"
-        Me.ColumnHeader3.Width = 200
+        Me.lblID.AutoSize = True
+        Me.lblID.Location = New System.Drawing.Point(730, 49)
+        Me.lblID.Name = "lblID"
+        Me.lblID.Size = New System.Drawing.Size(49, 25)
+        Me.lblID.TabIndex = 35
+        Me.lblID.Text = "lblID"
         '
         'frmLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(972, 813)
+        Me.Controls.Add(Me.lblID)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnRaderaRad)
@@ -160,4 +182,6 @@ Partial Class frmLista
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblID As Label
 End Class
