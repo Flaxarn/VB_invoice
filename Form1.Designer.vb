@@ -51,14 +51,7 @@ Partial Class frmStart
         Me.CI5 = New System.Windows.Forms.ColumnHeader()
         Me.CI6 = New System.Windows.Forms.ColumnHeader()
         Me.btnRadera = New System.Windows.Forms.Button()
-        Me.lvwFakturaRader = New System.Windows.Forms.ListView()
-        Me.txtBeskrivning = New System.Windows.Forms.TextBox()
-        Me.txtSumma = New System.Windows.Forms.TextBox()
-        Me.btnNyRad = New System.Windows.Forms.Button()
-        Me.btnSparaRad = New System.Windows.Forms.Button()
-        Me.btnRaderaRad = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnVisarader = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -296,92 +289,21 @@ Partial Class frmStart
         Me.btnRadera.Text = "Radera"
         Me.btnRadera.UseVisualStyleBackColor = True
         '
-        'lvwFakturaRader
+        'btnVisarader
         '
-        Me.lvwFakturaRader.FullRowSelect = True
-        Me.lvwFakturaRader.GridLines = True
-        Me.lvwFakturaRader.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.lvwFakturaRader.HideSelection = False
-        Me.lvwFakturaRader.Location = New System.Drawing.Point(794, 93)
-        Me.lvwFakturaRader.MultiSelect = False
-        Me.lvwFakturaRader.Name = "lvwFakturaRader"
-        Me.lvwFakturaRader.Size = New System.Drawing.Size(690, 532)
-        Me.lvwFakturaRader.TabIndex = 19
-        Me.lvwFakturaRader.UseCompatibleStateImageBehavior = False
-        Me.lvwFakturaRader.View = System.Windows.Forms.View.Details
-        '
-        'txtBeskrivning
-        '
-        Me.txtBeskrivning.Location = New System.Drawing.Point(969, 9)
-        Me.txtBeskrivning.Name = "txtBeskrivning"
-        Me.txtBeskrivning.Size = New System.Drawing.Size(150, 31)
-        Me.txtBeskrivning.TabIndex = 20
-        '
-        'txtSumma
-        '
-        Me.txtSumma.Location = New System.Drawing.Point(969, 46)
-        Me.txtSumma.Name = "txtSumma"
-        Me.txtSumma.Size = New System.Drawing.Size(150, 31)
-        Me.txtSumma.TabIndex = 21
-        '
-        'btnNyRad
-        '
-        Me.btnNyRad.Location = New System.Drawing.Point(1125, 30)
-        Me.btnNyRad.Name = "btnNyRad"
-        Me.btnNyRad.Size = New System.Drawing.Size(112, 34)
-        Me.btnNyRad.TabIndex = 22
-        Me.btnNyRad.Text = "Ny Rad"
-        Me.btnNyRad.UseVisualStyleBackColor = True
-        '
-        'btnSparaRad
-        '
-        Me.btnSparaRad.Location = New System.Drawing.Point(1244, 30)
-        Me.btnSparaRad.Name = "btnSparaRad"
-        Me.btnSparaRad.Size = New System.Drawing.Size(112, 34)
-        Me.btnSparaRad.TabIndex = 23
-        Me.btnSparaRad.Text = "Spara"
-        Me.btnSparaRad.UseVisualStyleBackColor = True
-        '
-        'btnRaderaRad
-        '
-        Me.btnRaderaRad.Location = New System.Drawing.Point(1363, 30)
-        Me.btnRaderaRad.Name = "btnRaderaRad"
-        Me.btnRaderaRad.Size = New System.Drawing.Size(112, 34)
-        Me.btnRaderaRad.TabIndex = 24
-        Me.btnRaderaRad.Text = "Radera"
-        Me.btnRaderaRad.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(794, 9)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(102, 25)
-        Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Beskrivning"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(794, 46)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(73, 25)
-        Me.Label8.TabIndex = 26
-        Me.Label8.Text = "Summa"
+        Me.btnVisarader.Location = New System.Drawing.Point(540, 178)
+        Me.btnVisarader.Name = "btnVisarader"
+        Me.btnVisarader.Size = New System.Drawing.Size(248, 34)
+        Me.btnVisarader.TabIndex = 19
+        Me.btnVisarader.Text = "Visa rader"
+        Me.btnVisarader.UseVisualStyleBackColor = True
         '
         'frmStart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1517, 754)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.btnRaderaRad)
-        Me.Controls.Add(Me.btnSparaRad)
-        Me.Controls.Add(Me.btnNyRad)
-        Me.Controls.Add(Me.txtSumma)
-        Me.Controls.Add(Me.txtBeskrivning)
-        Me.Controls.Add(Me.lvwFakturaRader)
+        Me.ClientSize = New System.Drawing.Size(800, 754)
+        Me.Controls.Add(Me.btnVisarader)
         Me.Controls.Add(Me.btnRadera)
         Me.Controls.Add(Me.lvwFakturor)
         Me.Controls.Add(Me.GroupBox1)
@@ -438,12 +360,5 @@ Partial Class frmStart
     Friend WithEvents CI5 As ColumnHeader
     Friend WithEvents CI6 As ColumnHeader
     Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents lvwFakturaRader As ListView
-    Friend WithEvents txtBeskrivning As TextBox
-    Friend WithEvents txtSumma As TextBox
-    Friend WithEvents btnNyRad As Button
-    Friend WithEvents btnSparaRad As Button
-    Friend WithEvents btnRaderaRad As Button
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents btnVisarader As Button
 End Class
